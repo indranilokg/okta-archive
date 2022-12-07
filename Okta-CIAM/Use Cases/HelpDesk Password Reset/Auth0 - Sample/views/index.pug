@@ -1,0 +1,20 @@
+extends layout
+block content
+    div.text-center
+        form(class="form-signin" method="POST" action="/lookup")
+            #error
+                if error
+                    p.text-danger Error!!!
+            <br><br>
+            - var h1Classes = ['h3', 'mb-3', 'font-weight-normal']
+            h1(class=h1Classes) HelpDesk Password Reset
+            <br><br>
+             - var textStyle = {display: block, margin:'auto', width: '25%'};
+            label( for="phone" class="sr-only") Phone Number
+            input(type="text" name="phone" id="phone" class="form-control" placeholder="Phone" required autofocus style=textStyle)
+            <br><br>
+            - var buttonClass=['btn', 'btn-lg', 'btn-primary', 'btn-block'];
+            - var buttonStyle = {display: block, margin:'auto', width: '10%'};
+            button(class=buttonClass type="submit" style=buttonStyle) Lookup
+            - var pClasses=['mt-5', 'mb-3', 'text-muted'];
+            p(class=pClasses)

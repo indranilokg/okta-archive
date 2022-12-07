@@ -1,0 +1,4 @@
+S3_OBJECT_KEY = "Okta-Access-Gateway.ova"
+OAG_OVA_FILE_PATH = "../../Okta-Access-Gateway.ova"
+aws_region = "us-east-1"
+OAG_AMI_NAME = "okta-access-gateway"

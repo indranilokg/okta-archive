@@ -1,0 +1,4 @@
+OAG_KEY_PATH = "~/.ssh/oagkey.pub"
+OAG_SSO_COOKIE_DOMAIN= "gateway.info"
+OAG_HOSTNAME = "gw.gateway.info"
+OAG_AMI_NAME = "okta-access-gateway"

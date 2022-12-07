@@ -1,0 +1,71 @@
+<!doctype html>
+  <script src="https://global.oktacdn.com/okta-auth-js/5.3.1/okta-auth-js.min.js" type="text/javascript"></script>
+  <script src="https://global.oktacdn.com/okta-signin-widget/5.8.3/js/okta-sign-in.min.js" type="text/javascript"></script>
+  <link href="https://global.oktacdn.com/okta-signin-widget/5.8.3/css/okta-sign-in.min.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+  <div id="content"></div>
+  <script>
+     var recoveryToken = "<%= recoveryToken %>";
+     console.log(recoveryToken)
+
+     var oktaSignIn = new OktaSignIn({
+        baseUrl: 'https://ijtest.oktapreview.com',
+        clientId: '0oax52em0J5XR2EF01d6',
+        redirectUri: 'http://localhost:3000/callback',
+        features: {
+          registration: false
+        },
+        useInteractionCodeFlow: false,
+        authParams: {
+          issuer: 'https://ijtest.oktapreview.com/oauth2/ausudrindxzkPASL51d6',
+          display: 'page',
+          scopes: ['openid', 'profile', 'email']
+        }, 
+        recoveryToken: recoveryToken
+      });
+
+      var config = {
+        issuer: 'https://ijtest.oktapreview.com/oauth2/ausudrindxzkPASL51d6',
+        clientId: '0oax52em0J5XR2EF01d6',
+        redirectUri: 'http://localhost:3000/callback',
+        scopes: ['openid', 'profile', 'email'],
+        pkce: true,
+        useInteractionCodeFlow: false
+      };
+
+     var authClient = new OktaAuth(config);
+     // HTML page to render.
+  var startRecovery = async function(){
+      document.getElementById('content').innerHTML = ""
+     
+      /*const par1 = document.createElement('div');
+      par1.innerHTML = `<div>
+                          <div>Enter New Password</div>
+                          <input id="newpassword" type="password" name="newpassword" required />
+                        </div>
+                        <br/>
+                        <button id="submit-login-form" onclick="recover();">
+                          Submit
+                        </button>`;
+      document.getElementById('content').appendChild(par1);*/
+
+      oktaSignIn.renderEl({el: '#content'}, function success(res) {
+        if (res.status === 'SUCCESS') {
+          console.log('Do something with this sessionToken', res.session.token);
+        } else {
+              console.log("error")
+          }
+      });
+  }
+
+  var recover = async function(){
+    tansaction = await authClient.verifyRecoveryToken({recoveryToken: recoveryToken})
+    console.log(tansaction)
+  }
+  
+  startRecovery()
+  
+  </script>
+</body>
+</html>

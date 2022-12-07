@@ -1,0 +1,21 @@
+extends layout
+block content
+    div.text-center
+        message
+        form(class="form-signin" method="POST" action="/validateotp")
+            #error
+                if error
+                    p.text-danger Error!!!
+            <br><br>
+            - var h1Classes = ['h3', 'mb-3', 'font-weight-normal']
+            h1(class=h1Classes) Validate OTP
+            <br><br>
+             - var textStyle = {display: block, margin:'auto', width: '25%'};
+            label( for="otp" class="sr-only") OTP
+            input(type="text" name="otp" id="otp" class="form-control" placeholder="OTP" required autofocus style=textStyle)
+            <br><br>
+            - var buttonClass=['btn', 'btn-lg', 'btn-primary', 'btn-block'];
+            - var buttonStyle = {display: block, margin:'auto', width: '10%'};
+            button(class=buttonClass type="submit" style=buttonStyle) Validate
+            - var pClasses=['mt-5', 'mb-3', 'text-muted'];
+            p(class=pClasses)
