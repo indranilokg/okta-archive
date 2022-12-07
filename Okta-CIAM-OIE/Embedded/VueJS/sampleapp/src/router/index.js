@@ -8,8 +8,8 @@ import LoginComponent from "@/components/Login";
 import { LoginCallback } from '@okta/okta-vue'
 
 const oktaAuth = new OktaAuth({
-  issuer: "https://acmecorp.twisec.com/oauth2/ausx90vikfMjKld000h7",
-  clientId: "0oax7szi44siifGwt0h7",
+  issuer: "https://****.oktapreview.com/oauth2/default",
+  clientId: "*****",
   redirectUri: "http://localhost:8080/login/callback",
   scopes: ["openid", "profile", "email"],
   pkce: true

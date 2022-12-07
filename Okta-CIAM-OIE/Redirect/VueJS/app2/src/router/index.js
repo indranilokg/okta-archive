@@ -11,8 +11,8 @@ import { OktaAuth } from '@okta/okta-auth-js'
 import OktaVue, { LoginCallback } from '@okta/okta-vue'
 
 /*Vue.use(Auth, {
-  issuer: 'https://acmecorp.twisec.com/oauth2/ausx90vikfMjKld000h7',
-  clientId: '0oax90oged0zLH1b50h7',
+  issuer: 'https://****.oktapreview.com/oauth2/default',
+  clientId: '*******',
   redirectUri: 'http://localhost:8081/login/callback',
   scopes: ['openid', 'profile', 'email'],
   pkce: true

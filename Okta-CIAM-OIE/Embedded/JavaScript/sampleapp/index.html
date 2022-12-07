@@ -21,8 +21,8 @@
   var marketingpreference = "False";
 
   var oktaSignIn = new OktaSignIn({
-      baseUrl: 'https://ijtest.oktapreview.com',
-      clientId: '0oax52em0J5XR2EF01d6',
+      baseUrl: 'https://*****.oktapreview.com',
+      clientId: '*******',
       redirectUri: 'http://localhost:3000/callback',
       features: {
         registration: false,
@@ -37,7 +37,7 @@
       },
       useInteractionCodeFlow: true,
       authParams: {
-        issuer: 'https://ijtest.oktapreview.com/oauth2/default',
+        issuer: 'https://******.oktapreview.com/oauth2/default',
         display: 'page',
         scopes: ['openid', 'profile', 'email', 'okta.myAccount.email.manage', 'okta.myAccount.email.read', 
                   'okta.myAccount.phone.manage', 'okta.myAccount.phone.read', 

@@ -10,15 +10,15 @@
      console.log(recoveryToken)
 
      var oktaSignIn = new OktaSignIn({
-        baseUrl: 'https://ijtest.oktapreview.com',
-        clientId: '0oax52em0J5XR2EF01d6',
+        baseUrl: 'https://******.oktapreview.com',
+        clientId: '*******',
         redirectUri: 'http://localhost:3000/callback',
         features: {
           registration: false
         },
         useInteractionCodeFlow: false,
         authParams: {
-          issuer: 'https://ijtest.oktapreview.com/oauth2/ausudrindxzkPASL51d6',
+          issuer: 'https://*****.oktapreview.com/oauth2/default',
           display: 'page',
           scopes: ['openid', 'profile', 'email']
         }, 
@@ -26,8 +26,8 @@
       });
 
       var config = {
-        issuer: 'https://ijtest.oktapreview.com/oauth2/ausudrindxzkPASL51d6',
-        clientId: '0oax52em0J5XR2EF01d6',
+        issuer: 'https://*****.oktapreview.com/oauth2/default',
+        clientId: '******',
         redirectUri: 'http://localhost:3000/callback',
         scopes: ['openid', 'profile', 'email'],
         pkce: true,
